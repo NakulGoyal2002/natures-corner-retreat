@@ -48,7 +48,7 @@ export default async function Navigation() {
 				</li>
 				<li>
 					<Link
-						href='https://natures-corner-retreat.netlify.app'
+						href='https://natures-corner-retreat-admin.netlify.app'
 						className='hover:text-accent-400 transition-colors'
 					>
 						Admin area
