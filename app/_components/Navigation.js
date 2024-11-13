@@ -48,7 +48,7 @@ export default async function Navigation() {
 				</li>
 				<li>
 					<Link
-						href='https://natures-corner-retreat-admin.vercel.app/login'
+						href='https://natures-corner-retreat-admin.vercel.app'
 						className='hover:text-accent-400 transition-colors'
 					>
 						Admin area
