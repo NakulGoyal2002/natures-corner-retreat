@@ -48,7 +48,7 @@ export default async function Navigation() {
 				</li>
 				<li>
 					<Link
-						href='https://nakul-react-the-wild-oasis.netlify.app/login'
+						href='https://natures-corner-retreat-admin.vercel.app/login'
 						className='hover:text-accent-400 transition-colors'
 					>
 						Admin area
