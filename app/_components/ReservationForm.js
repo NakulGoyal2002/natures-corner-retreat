@@ -3,6 +3,7 @@
 import { differenceInDays } from "date-fns";
 import { useReservation } from "./ReservationContext";
 import { createBooking } from "../_lib/actions";
+import emailjs from "@emailjs/browser";
 import SubmitButton from "./SubmitButton";
 
 function ReservationForm({ cabin, user }) {
@@ -21,6 +22,7 @@ function ReservationForm({ cabin, user }) {
 		numNights,
 		cabinPrice,
 		cabinId: id,
+		cabinName: cabin.name,
 	};
 
 	const createBookingWithData = createBooking.bind(null, bookingData);
@@ -41,10 +43,48 @@ function ReservationForm({ cabin, user }) {
 				</div>
 			</div>
 
-			<form
+			{/* <form
 				// action={createBookingWithData}
 				action={async (formData) => {
 					await createBookingWithData(formData);
+					resetRange();
+				}}
+				className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'
+			> */}
+
+			{/* <form
+				action={async (formData) => {
+					await createBookingWithData(formData);
+
+					await sendEmail({
+						name: user.name,
+						email: user.email,
+						reservationDetails: `Cabin: ${cabin.name || "Unknown"}
+Dates: ${range.from?.toDateString()} to ${range.to?.toDateString()}
+Guests: ${formData.get("numGuests")}
+Observations: ${formData.get("observations") || "None"}`,
+					});
+
+					resetRange();
+				}}
+				className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'
+			> */}
+			<form
+				action={async (formData) => {
+					await createBookingWithData(formData);
+
+					const reservationDetails = `Cabin: ${cabin.name || "Unknown"}
+Dates: ${range.from?.toDateString()} to ${range.to?.toDateString()}
+Guests: ${formData.get("numGuests")}
+Observations: ${formData.get("observations") || "None"}
+Total Bill: ₹${cabinPrice}`;
+
+					await sendEmail({
+						name: user.name,
+						email: user.email,
+						reservationDetails,
+					});
+
 					resetRange();
 				}}
 				className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'
@@ -92,6 +132,24 @@ function ReservationForm({ cabin, user }) {
 			</form>
 		</div>
 	);
+}
+
+async function sendEmail({ name, email, reservationDetails }) {
+	try {
+		const result = await emailjs.send(
+			"service_9pzmlns", // your service ID
+			"template_peyjhp4", // your template ID
+			{
+				name,
+				email,
+				reservationDetails,
+			},
+			"BXxyV2l0KjhAxAzU2" // your public key
+		);
+		console.log("✅ Email sent", result);
+	} catch (err) {
+		console.error("❌ Email send failed", err);
+	}
 }
 
 export default ReservationForm;

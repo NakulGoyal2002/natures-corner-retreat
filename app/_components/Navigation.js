@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { auth } from "../_lib/auth";
 
+function toPascalCase(str) {
+	return str
+		.toLowerCase()
+		.split(" ")
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(" ");
+}
+
 export default async function Navigation() {
 	const session = await auth();
+	const pascalName = session?.user?.name ? toPascalCase(session.user.name) : "";
 
 	return (
 		<nav className='z-10 text-xl'>
@@ -24,6 +33,22 @@ export default async function Navigation() {
 					</Link>
 				</li>
 				<li>
+					<Link
+						href='/facilities'
+						className='hover:text-accent-400 transition-colors'
+					>
+						Facilities
+					</Link>
+				</li>
+				<li>
+					<Link
+						href='/support'
+						className='hover:text-accent-400 transition-colors'
+					>
+						Help and Support
+					</Link>
+				</li>
+				<li>
 					{session?.user?.image ? (
 						<Link
 							href='/account'
@@ -35,14 +60,16 @@ export default async function Navigation() {
 								alt={session.user.image}
 								referrerPolicy='no-referrer'
 							/>
-							<span>Guest area</span>
+							<span>
+								<span className='text-base'>{pascalName}</span>
+							</span>
 						</Link>
 					) : (
 						<Link
 							href='/account'
 							className='hover:text-accent-400 transition-colors'
 						>
-							Guest area
+							<span className='text-base'>{pascalName}</span>
 						</Link>
 					)}
 				</li>
@@ -51,7 +78,7 @@ export default async function Navigation() {
 						href='https://natures-corner-retreat-admin.netlify.app'
 						className='hover:text-accent-400 transition-colors'
 					>
-						Admin area
+						Admin
 					</Link>
 				</li>
 			</ul>
