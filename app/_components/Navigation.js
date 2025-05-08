@@ -69,7 +69,7 @@ export default async function Navigation() {
 							href='/account'
 							className='hover:text-accent-400 transition-colors'
 						>
-							<span className='text-base'>{pascalName}</span>
+							Guest
 						</Link>
 					)}
 				</li>
