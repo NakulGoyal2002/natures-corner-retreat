@@ -179,12 +179,7 @@ export default function FoodHighlightSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <p className="text-sm text-gray-300 italic">
-            Image: A vibrant breakfast table in a forest clearing, with organic Aloo Paratha and Poha on cultural wooden plates, surrounded by lush greenery and solar lanterns.
-          </p>
-          <p className="text-sm text-gray-300 mt-2">
-            <strong>AI Image Prompt:</strong> A forest breakfast setup with wooden tables, organic Aloo Paratha and Poha on cultural plates, solar lanterns, and lush greenery. Use a green-gold palette (#10B981, #F59E0B), glassmorphism overlay, faint leaf patterns, and glowing stars. Size: 800x400px, vibrant and eco-friendly.
-          </p>
+          
         </motion.div>
       </div>
     </section>
