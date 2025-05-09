@@ -102,7 +102,7 @@ const Sustainability = () => {
               </p>
             </div>
             <a
-              href="/sustainability"
+              href="/vision"
               className="inline-block bg-forest-green text-white px-8 py-3 rounded-full font-semibold hover:bg-forest-green-dark transition-colors font-raleway"
             >
               Discover Our Impact

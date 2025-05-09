@@ -6,6 +6,7 @@ import Script from "next/script";
 import HeroSection from "./_components/HeroSection.js";
 import FeaturedCabins from "./_components/FeaturedCabins.js";
 import FacilitiesHighlights from "./_components/FacilitiesHighlights.js";
+import FoodHighlightSection from "./_components/FoodHighlightSection.js"
 import SpecialOffers from "./_components/SpecialOffers.js";
 import Testimonials from "./_components/Testimonials.js";
 import WhyChoose from "./_components/WhyChoose.js";
@@ -70,10 +71,11 @@ export default function Page() {
 			<FeaturedCabins />
 			<SpecialOffers />
 			<FacilitiesHighlights />
-			<Testimonials />
+			<FoodHighlightSection/>
 			<WhyChoose />
 			<ExploreArea />
 			<Sustainability />
+			<Testimonials />
 			<TrustSignals />
 		</main>
 	);

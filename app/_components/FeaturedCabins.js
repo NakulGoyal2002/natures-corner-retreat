@@ -10,31 +10,31 @@ import cabin4 from "@/public/cabin4.jpg";
 
 const cabins = [
 	{
-		id: 1,
-		name: "Serenity Cabin",
+		id: 3,
+		name: "Cabin 001",
 		tagline: "Cozy retreat with lake views",
-		price: "$250/night",
+		price: "₹2024/night",
 		image: cabin1,
 	},
 	{
-		id: 2,
-		name: "Forest Haven",
+		id: 5,
+		name: "Cabin 003",
 		tagline: "Nestled in lush greenery",
-		price: "$280/night",
+		price: "₹5580/night",
 		image: cabin2,
 	},
 	{
-		id: 3,
-		name: "Mountain Bliss",
+		id: 8,
+		name: "Cabin 006",
 		tagline: "Panoramic mountain vistas",
-		price: "$300/night",
+		price: "₹9450/night",
 		image: cabin3,
 	},
 	{
-		id: 4,
-		name: "Riverside Lodge",
+		id: 10,
+		name: "Cabin 008",
 		tagline: "Tranquil riverfront escape",
-		price: "$270/night",
+		price: "₹17000/night",
 		image: cabin4,
 	},
 ];

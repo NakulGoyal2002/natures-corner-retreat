@@ -23,20 +23,13 @@ const Footer = () => {
 							wellness activities, and sustainable practices.
 						</p>
 						<ul className='space-y-3'>
+							
 							<li>
 								<Link
-									href='/about'
+									href='/cabins'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
-									Our Story
-								</Link>
-							</li>
-							<li>
-								<Link
-									href='/booking-system'
-									className='text-gray-200 hover:text-yellow-300 transition-colors'
-								>
-									Booking System
+									Cabin booking
 								</Link>
 							</li>
 							<li>
@@ -49,10 +42,26 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									href='/sustainability'
+									href='/about'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
-									Sustainability Initiatives
+									About
+								</Link>
+							</li>
+							<li>
+								<Link
+									href='/vision'
+									className='text-gray-200 hover:text-yellow-300 transition-colors'
+								>
+									Our vision
+								</Link>
+							</li>
+							<li>
+								<Link
+									href='/support'
+									className='text-gray-200 hover:text-yellow-300 transition-colors'
+								>
+									Help and Support
 								</Link>
 							</li>
 						</ul>
@@ -88,12 +97,12 @@ const Footer = () => {
 									href='tel:+919298388243'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
-									Phone: +91 92983 882
+									Phone: +91 92983 88245
 								</a>
 							</li>
 							<li>
 								<Link
-									href='/contact'
+									href='/'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
 									Get Directions
@@ -122,7 +131,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									href='/gallery'
+									href='/'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
 									Gallery
@@ -130,7 +139,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									href='/blog'
+									href='/'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
 									Blog
@@ -138,7 +147,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									href='/testimonials'
+									href='/'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
 									Guest Reviews
@@ -146,7 +155,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									href='/events'
+									href='/'
 									className='text-gray-200 hover:text-yellow-300 transition-colors'
 								>
 									Events & Retreats
@@ -205,7 +214,7 @@ const Footer = () => {
 						</h4>
 						<p className='text-gray-200'>
 							<Link
-								href='/newsletter'
+								href='/'
 								className='text-gray-200 hover:text-yellow-300 transition-colors'
 							>
 								Subscribe for exclusive offers and updates

@@ -15,7 +15,7 @@ export default async function Navigation() {
 
 	return (
 		<nav className='z-10 text-xl'>
-			<ul className='flex gap-16 items-center'>
+			<ul className='flex gap-10 items-center'>
 				<li>
 					<Link
 						href='/cabins'
@@ -24,14 +24,7 @@ export default async function Navigation() {
 						Cabins
 					</Link>
 				</li>
-				<li>
-					<Link
-						href='/about'
-						className='hover:text-accent-400 transition-colors'
-					>
-						About
-					</Link>
-				</li>
+				
 				<li>
 					<Link
 						href='/facilities'
@@ -42,10 +35,35 @@ export default async function Navigation() {
 				</li>
 				<li>
 					<Link
+						href='/dining'
+						className='hover:text-accent-400 transition-colors'
+					>
+						Dining
+					</Link>
+				</li>
+				<li>
+					<Link
+						href='/about'
+						className='hover:text-accent-400 transition-colors'
+					>
+						About
+					</Link>
+				</li>
+				
+				<li>
+					<Link
+						href='/vision'
+						className='hover:text-accent-400 transition-colors'
+					>
+						Vision
+					</Link>
+				</li>
+				<li>
+					<Link
 						href='/support'
 						className='hover:text-accent-400 transition-colors'
 					>
-						Help and Support
+						Help & Support
 					</Link>
 				</li>
 				<li>
