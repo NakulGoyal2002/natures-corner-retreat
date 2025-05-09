@@ -69,18 +69,18 @@ export default async function Navigation() {
 							href='/account'
 							className='hover:text-accent-400 transition-colors'
 						>
-							Guest
+							User
 						</Link>
 					)}
 				</li>
-				<li>
+				{/* <li>
 					<Link
 						href='https://natures-corner-retreat-admin.netlify.app'
 						className='hover:text-accent-400 transition-colors'
 					>
 						Admin
 					</Link>
-				</li>
+				</li> */}
 			</ul>
 		</nav>
 	);

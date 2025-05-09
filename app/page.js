@@ -13,20 +13,21 @@ import ExploreArea from "./_components/ExploreArea.js";
 import Sustainability from "./_components/Sustainability.js";
 import TrustSignals from "./_components/TrustSignals.js";
 import TidioLoader from "./_components/TidioLoader.js";
+import Chatbot from "./_components/Chatbot.js";
 
 export default function Page() {
 	return (
-		<main className='mt-24'>
-			{/* <Image
+		<main className='mt-7'>
+			 {/* <Image
 				fill
 				src={bg}
 				placeholder='blur'
 				className='object-cover object-top'
 				quality={80}
 				alt='Mountains and forests with two cabins'
-			/> */}
+			/>  */}
 			<div className='relative z-10 text-center'>
-				<h1 className='text-8xl text-primary-50 mb-10 tracking-tight font-normal'>
+				<h1 className='text-8xl text-primary-50 mb-24 tracking-tight font-normal'>
 					Where Peace Meets Paradise.
 				</h1>
 				<Link
@@ -48,7 +49,7 @@ export default function Page() {
 					async
 				></script>
 			</div> */}
-
+			<Chatbot />
 			<div style={floatingChatStyleTidio}>
 				<script
 					src='//code.tidio.co/jo0czodr7vp3gyivxuvzc6utzsqaecbx.js'

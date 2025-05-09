@@ -1,11 +1,45 @@
 import React from "react";
 import TextExpander from "@/app/_components/TextExpander";
-import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
+import {
+	EyeSlashIcon,
+	MapPinIcon,
+	UsersIcon,
+	WifiIcon,
+	SunIcon,
+	StarIcon,
+} from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 export default function Cabin({ cabin }) {
 	const { id, name, maxCapacity, regularPrice, discount, image, description } =
 		cabin;
+	const features = [];
+	if (maxCapacity <= 3) {
+		features.push(
+			{ name: "High-Speed WiFi", icon: WifiIcon },
+			{ name: "Eco-Friendly Toiletries", icon: SunIcon },
+			{ name: "Bottled Water", icon: StarIcon }
+		);
+	} else if (maxCapacity >= 4 && maxCapacity <= 7) {
+		features.push(
+			{ name: "High-Speed WiFi", icon: WifiIcon },
+			{ name: "Eco-Friendly Toiletries", icon: SunIcon },
+			{ name: "Bottled Water", icon: StarIcon },
+			{ name: "Minibar", icon: StarIcon },
+			{ name: "Nature-Guided Tours", icon: MapPinIcon }
+		);
+	} else {
+		features.push(
+			{ name: "High-Speed WiFi", icon: WifiIcon },
+			{ name: "Eco-Friendly Toiletries", icon: SunIcon },
+			{ name: "Bottled Water", icon: StarIcon },
+			{ name: "Minibar", icon: StarIcon },
+			{ name: "Nature-Guided Tours", icon: MapPinIcon },
+			{ name: "Private Hot Tub", icon: StarIcon },
+			{ name: "Personal Chef Service", icon: StarIcon },
+			{ name: "Complimentary Yoga Sessions", icon: SunIcon }
+		);
+	}
 	return (
 		<div className='grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24'>
 			<div className='relative scale-[1.15] -translate-x-3'>
@@ -46,6 +80,19 @@ export default function Cabin({ cabin }) {
 							Privacy <span className='font-bold'>100%</span> guaranteed
 						</span>
 					</li>
+				</ul>
+				<h4 className='text-2xl font-semibold text-forest-green mb-4 font-cormorant'>
+					Features & Facilities
+				</h4>
+				<ul className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-8'>
+					{features.map((feature, index) => (
+						<li key={index} className='flex gap-3 items-center'>
+							<feature.icon className='h-6 w-6 text-forest-green' />
+							<span className='text-lg text-primary-200 font-raleway'>
+								{feature.name}
+							</span>
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>

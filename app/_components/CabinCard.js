@@ -1,11 +1,27 @@
-import { UsersIcon } from "@heroicons/react/24/solid";
+import { UsersIcon, WifiIcon, SunIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function CabinCard({ cabin }) {
 	const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
-
+	const previewFeatures = [];
+	if (maxCapacity <= 3) {
+		previewFeatures.push(
+			{ name: "WiFi", icon: WifiIcon },
+			{ name: "Eco Toiletries", icon: SunIcon }
+		);
+	} else if (maxCapacity >= 4 && maxCapacity <= 7) {
+		previewFeatures.push(
+			{ name: "WiFi", icon: WifiIcon },
+			{ name: "Minibar", icon: SunIcon }
+		);
+	} else {
+		previewFeatures.push(
+			{ name: "WiFi", icon: WifiIcon },
+			{ name: "Hot Tub", icon: SunIcon }
+		);
+	}
 	return (
 		<div className='flex border-primary-800 border'>
 			<div className='flex-1 relative'>
@@ -29,7 +45,16 @@ function CabinCard({ cabin }) {
 							For up to <span className='font-bold'>{maxCapacity}</span> guests
 						</p>
 					</div>
-
+					<div className='flex gap-3 mb-4'>
+						{previewFeatures.map((feature, index) => (
+							<div key={index} className='flex gap-2 items-center'>
+								<feature.icon className='h-5 w-5 text-forest-green' />
+								<span className='text-sm text-primary-200 font-raleway'>
+									{feature.name}
+								</span>
+							</div>
+						))}
+					</div>
 					<p className='flex gap-3 justify-end items-baseline'>
 						{discount > 0 ? (
 							<>

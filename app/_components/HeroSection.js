@@ -21,7 +21,7 @@ const HeroSection = () => {
 			<div
 				className='absolute inset-0 z-0'
 				style={{
-					transform: `translateY(${scrollY * 0.3}px)`,
+					transform: `translateY(${scrollY * 0.1}px)`,
 				}}
 			>
 				<Image
