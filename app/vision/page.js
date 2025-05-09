@@ -278,12 +278,7 @@ export default function OurVision() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.5 }}
         >
-          <p className="text-sm text-gray-300 italic">
-            Image: A vibrant forest clearing with eco-friendly wooden cottages, solar panels shimmering in sunlight, and lush organic gardens. Cultural wooden plates adorn outdoor tables, surrounded by native plants and a soft green-gold glow, reflecting our sustainable vision.
-          </p>
-          <p className="text-sm text-gray-300 mt-2">
-            <strong>AI Image Prompt:</strong> A dynamic forest clearing with wooden cottages, solar panels, and organic gardens. Include cultural wooden plates, native plants, and a green-gold glow (#10B981, #F59E0B). Use a 2D vibrant palette with glassmorphism overlay, faint leaf patterns, and glowing stars. Size: 800x400px, dynamic and eco-friendly.
-          </p>
+    
         </motion.div>
 
         {/* Why It's Unique */}
